@@ -1,0 +1,96 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+.condition1 {
+    padding: 35px;
+    font-family: Poppins;
+  }
+  .condition1 p {
+    color: rgba(128, 128, 128, 0.836);
+  }
+  .condition p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping1 h4 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .shipping1 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping2 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping2 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping3 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping3 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping4 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping4 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping5 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping5 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping6 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping6 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping7 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping7 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping8 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping8 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping9 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping9 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .shipping10 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .shipping10 p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }

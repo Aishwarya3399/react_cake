@@ -1,0 +1,51 @@
+.banner-sliders {
+  position: relative;
+  width: 100%;
+  max-width: 100rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slidess {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides {
+  min-width: 100%;
+  height: 80%;
+}
+
+.slides img {
+  width: 100%;
+  height: 550px;
+  display: block;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.radio-buttons label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .radio-buttons label {
+  background-color: #333;
+}

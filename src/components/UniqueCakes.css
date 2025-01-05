@@ -1,0 +1,52 @@
+/* Container for unique cakes section */
+.unique-cakes {
+    padding: 0 10px; /* Reduce horizontal padding for compact layout */
+  }
+  
+  /* Title styling */
+  .unique-cakes h1 {
+    margin-bottom: 20px; /* Adjust spacing below the title */
+    font-size: 1.8rem; /* Slightly smaller title */
+    text-align: center;
+    color: #dc3545; /* Danger color for emphasis */
+  }
+  
+  /* Row styling */
+  .unique-cakes .row {
+    margin: 0 -5px; /* Reduce gaps between columns */
+  }
+  
+  /* Card container styling */
+  .unique-cakes .card-container {
+    padding: 5px; /* Reduce space between cards */
+  }
+  
+  /* Image styling */
+  .unique-cakes .card img {
+    height: 150px; /* Uniform image height */
+    object-fit: cover; /* Ensure proper fit */
+    border-radius: 8px; /* Rounded corners for better visuals */
+    width: 100%; /* Ensure image fills the card width */
+  }
+  
+  /* Card title styling */
+  .unique-cakes .card-title {
+    font-size: 1rem; /* Adjust font size */
+    margin: 5px 0; /* Reduce spacing around title */
+    text-align: center; /* Center-align the text */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Ensure title fits in the card */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
+  }
+  
+  /* Responsiveness for small screens */
+  @media (max-width: 576px) {
+    .unique-cakes .card img {
+      height: 120px; /* Adjust image height for smaller screens */
+    }
+  
+    .unique-cakes h1 {
+      font-size: 1.5rem; /* Slightly smaller title for mobile view */
+    }
+  }
+  

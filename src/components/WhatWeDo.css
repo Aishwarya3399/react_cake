@@ -1,0 +1,29 @@
+.what-we-do .row > div {
+  padding: 5px; /* Reduce spacing between columns */
+}
+
+.card-title {
+  margin: 5px 0; /* Reduce top and bottom margin */
+  font-size: 1rem; /* Slightly smaller font size */
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ellipsis for long titles */
+}
+
+.what-we-do .card {
+  padding: 10px; /* Adjust padding inside cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure even spacing */
+  border-radius: 8px; /* Optional: Rounded corners for better visuals */
+}
+
+.what-we-do .card img {
+  height: 120px; /* Adjust image height */
+  object-fit: cover; /* Ensure image fits nicely */
+}
+
+.what-we-do .row {
+  margin: 0 -5px; /* Reduce the row's negative margins */
+}

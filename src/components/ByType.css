@@ -1,0 +1,118 @@
+/* Container for the entire By Type section */
+#carousel3 {
+  position: relative;
+  overflow: hidden; /* Ensures only visible items show */
+  width: 100%;
+  margin: 0 auto; /* Centers the carousel */
+  padding: 0 10px; /* Adds some space around carousel */
+  margin-bottom: 10px; /* Reduced space below the carousel */
+}
+
+/* Heading for By Type */
+#carousel3 h1 {
+  font-size: 1.5rem; /* Reduced font size */
+  font-weight: bold;
+  color: #ff4b6b; /* Adjust color for contrast */
+  margin-bottom: 10px; /* Reduced space below the heading */
+}
+
+/* Carousel items container */
+#carousel3 .carousel {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for slides */
+  will-change: transform; /* Optimize for animation */
+}
+
+/* Individual item styling */
+#carousel3 .item {
+  text-align: center;
+  height: 20rem; /* Reduced height */
+  padding: 0 5px; /* Reduced spacing between items */
+  flex: 0 0 25%; /* Default: 4 items visible */
+  margin-bottom: 10px; /* Reduced space below the cards */
+}
+
+#carousel3 .item img {
+  width: 100%; /* Ensure images are responsive */
+  height: auto;
+  max-height: 270px; /* Reduced max height */
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
+  transition: transform 0.6s ease; /* Smooth zoom effect */
+}
+
+#carousel3 .item img:hover {
+  transform: scale(1.05); /* Reduced zoom effect on hover */
+}
+
+/* Card title styling */
+#carousel3 .card-title-div {
+  padding: 5px 0; /* Reduced padding */
+  background-color: #f8f9fa; /* Light background for title */
+  border: 1px solid #ddd; /* Subtle border for separation */
+  border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+}
+
+#carousel3 .card-title {
+  font-size: 1rem; /* Slightly smaller font size */
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding: 0 5px; /* Padding for tighter text */
+}
+
+/* Carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #fff;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  width: 30px; /* Smaller buttons */
+  height: 30px; /* Smaller buttons */
+  border-radius: 50%; /* Circular buttons */
+}
+
+.carousel-control-prev {
+  left: 10px; /* Adjust position for the previous button */
+}
+
+.carousel-control-next {
+  right: 10px; /* Adjust position for the next button */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #carousel3 .item {
+    flex: 0 0 100%; /* Only one item visible in mobile view */
+    padding: 0 3px; /* Reduced spacing */
+  }
+
+  #carousel3 .item img {
+    max-height: 230px; /* Adjust max height for smaller screens */
+  }
+
+  #carousel3 .card-title {
+    font-size: 0.9rem; /* Smaller title font for mobile */
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px; /* Smaller navigation buttons */
+    height: 25px; /* Smaller navigation buttons */
+  }
+
+  #carousel3 h1 {
+    font-size: 1.2rem; /* Smaller heading font size for mobile */
+    margin-bottom: 5px; /* Reduced space below the heading */
+  }
+}

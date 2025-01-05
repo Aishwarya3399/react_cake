@@ -1,0 +1,341 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+.filter-section {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .close-filter-btn {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .sticky-filter {
+    position: sticky;
+    top: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .card-img-top {
+    width: 200px;
+  }
+  .cart-item {
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 0;
+  }
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+
+  .product-card {
+    cursor: pointer;
+  }
+  .product-card:hover {
+    scale: 1.05;
+  }
+
+
+  .image-container {
+    position: relative;
+  }
+
+  .wishlist-icon {
+    position: absolute; /* Make it float on top */
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
+    z-index: 10; /* Ensure it is above other elements */
+    font-size: 1.5rem;
+    color: grey;
+    transition: color 0.3s ease;
+  }
+  
+  .wishlist-icon:hover {
+    color: red;
+  }
+  
+  .product-card {
+    position: relative; 
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .product-list {
+    flex-grow: 1;
+  }
+  .product-card {
+    cursor: pointer;
+  }
+  .product-card:hover {
+    scale: 1.05;
+  }
+
+  .card {
+    width: 21rem;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all ease 0.5s;
+  }
+  .card:hover {
+    background-color: #f3adc1;
+  }
+  .qb-btn {
+    border: 2px solid black;
+  }
+  .qb-btn:hover {
+    background-color: white;
+  }
+  .custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .custom-select button {
+    width: 100%;
+  }
+
+  .custom-select-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+    bottom: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  /* Modal Styling */
+.modal-dialog {
+  max-width: 900px; /* Increase the width */
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-product-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal-product-details img {
+  width: 50%; /* Half width for the image */
+  height: auto;
+}
+
+.modal-product-description {
+  width: 50%; /* Half width for the description */
+  padding: 0 20px;
+}
+
+.modal-product-description h5 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.modal-product-description select,
+.modal-product-description p {
+  margin-bottom: 10px;
+}
+
+#modalProductPrice {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ff6347; /* Adjust price color */
+}
+/* Adjust width of the individual columns (cards) */
+#productList .col-md-3 {
+  padding: 0.5rem;  /* Add padding around each card */
+}
+
+/* Product card styling */
+.product-card {
+  width: 280px; /* Increased width of the card */
+  margin: 0 auto; /* Center the cards */
+}
+
+/* Hover effect for the card */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.product-card img {
+  width: 100%;
+  height: 260px; 
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Cake info section styling */
+.product-card .cake-info {
+  /* padding: 0.5rem; */
+  height: 70%; /* Decreased height of the cake info section */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.product-card .cake-info h6 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  /* margin: 0.5rem 0; */
+}
+
+.product-card .cake-info p {
+  font-size: 0.8rem;
+  color: #555;
+  /* margin: 0.2rem 0; */
+}
+
+.product-card .quick-buy-btn {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+  white-space: nowrap;
+}
+
+/* Flex container for card rows */
+#productList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; 
+  /* justify-content: space-between;  */
+}
+
+/* Adjust for responsiveness on smaller screens */
+@media (max-width: 768px) {
+  #productList .col-md-3 {
+    flex: 0 0 calc(50% - 1rem); /* Two cards per row */
+  }
+  .product-card {
+    width: 100%; /* Full width of the parent */
+  }
+}
+/* Modal Styling */
+#quickBuyModal .modal-content {
+  background-color: #fff; /* White background for the modal */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 800px; /* Increased width for the modal */
+  width: 80%; /* Make modal width 80% of the screen size */
+}
+
+/* Modal Header Styling */
+#quickBuyModal .modal-header {
+  background-color: #fff; /* White background */
+  color: black; /* Black text color */
+  border-bottom: none; /* Remove default border */
+}
+
+#quickBuyModal .modal-header .modal-title {
+  font-family: 'Poppins', sans-serif; /* Custom font */
+  font-size: 1.5rem; /* Title font size */
+}
+
+/* Modal Body Styling */
+#quickBuyModal .modal-body {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: row; /* Flex layout with row direction */
+  gap: 30px; /* Increased gap between image and description */
+}
+
+/* Image Section Styling */
+#quickBuyModal .modal-product-details img {
+  width: 50%; /* Image takes up 50% of the width */
+  max-height: 400px; /* Limit image height */
+  object-fit: contain; /* Ensure the image fits without distortion */
+  border-radius: 8px; /* Optional rounded corners for the image */
+}
+
+/* Description Section Styling */
+#quickBuyModal .modal-product-details div {
+  width: 50%; /* Description takes up 50% of the width */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+#quickBuyModal .modal-product-details h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#quickBuyModal .modal-product-details label {
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Enhanced Form Control Styling */
+#quickBuyModal .modal-product-details select {
+  width: 15rem !important; 
+  padding: 6px !important; 
+  font-size: 1.1rem !important; 
+  border-radius: 5px !important;
+  border: 1px solid #ddd !important; 
+  margin-bottom: 12px !important; 
+  transition: all 0.3s ease !important; 
+}
+
+#quickBuyModal .modal-product-details select:focus {
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); 
+}
+
+/* Price Styling */
+#quickBuyModal #modalProductPrice {
+  font-size: 1.3rem; /* Increased font size for the price */
+  font-weight: 700;
+  color: #333; /* Dark color for price */
+  margin-top: 20px;
+}
+
+/* Modal Footer Styling */
+#quickBuyModal .modal-footer {
+  border-top: none;
+  justify-content: center;
+  padding: 15px;
+}
+
+#quickBuyModal .modal-footer .btn-primary {
+  background-color: #007bff; /* Blue background for the button */
+  border: none;
+  padding: 12px 24px; /* Increased padding */
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+#quickBuyModal .modal-footer .btn-primary:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+}
+

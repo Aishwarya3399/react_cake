@@ -1,0 +1,78 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+.FAQ h1 {
+  font-size: 30px;
+  font-family: Poppins;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.main-page {
+  background-color: #fcfbfb;
+  padding-top: 1rem;
+  min-height: 100vh;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.faq-header {
+  padding: 10px 20px;
+  width: 70rem;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(252, 189, 202);
+  border-bottom: 1px solid #dee2e6;
+  border-style: double;
+  border-color: rgb(228, 233, 237);
+}
+
+.faq-header h6 {
+  margin-bottom: 0;
+  color: #212529;
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 20px;
+  font-family: Poppins;
+}
+
+.faq-header h6:hover {
+  color: #fe817e;
+}
+
+.icon-main {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.answer {
+  display: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Poppins;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  max-height: 0;
+  padding: 0;
+}
+
+.answer.open {
+  display: block;
+  max-height: 200px; /* Adjust to fit content */
+  padding: 10px;
+}
+
+/* Rounded corners for search bar */
+#searchInput {
+  border-radius: 20px;
+  width: 25rem;
+}

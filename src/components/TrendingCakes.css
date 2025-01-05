@@ -1,0 +1,51 @@
+/* Container for trending cakes section */
+.trending-cakes {
+  padding: 0 10px; /* Reduce horizontal padding for compact layout */
+}
+
+/* Title styling */
+.trending-cakes h1 {
+  margin-bottom: 20px; /* Adjust spacing below the title */
+  font-size: 1.8rem; /* Smaller font size for better fit */
+  text-align: center;
+  color: #dc3545; /* Bootstrap's danger color */
+}
+
+/* Row styling */
+.trending-cakes .row {
+  margin: 0 -5px; /* Reduce gaps between columns */
+}
+
+/* Individual card container */
+.trending-cakes .card-container {
+  padding: 5px; /* Reduce space between cards */
+}
+
+/* Image styling */
+.trending-cakes .card img {
+  height: 150px; /* Uniform image height */
+  object-fit: cover; /* Ensure proper fit */
+  border-radius: 8px; /* Rounded corners for better visuals */
+  width: 100%; /* Ensure the image fills the card width */
+}
+
+/* Card title styling */
+.trending-cakes .card-title {
+  font-size: 1rem; /* Adjust font size */
+  margin: 5px 0; /* Reduce spacing around title */
+  text-align: center; /* Center-align the text */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Ensure title fits in the card */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 576px) {
+  .trending-cakes .card img {
+    height: 120px; /* Adjust image height for smaller screens */
+  }
+
+  .trending-cakes h1 {
+    font-size: 1.5rem; /* Smaller title for mobile view */
+  }
+}

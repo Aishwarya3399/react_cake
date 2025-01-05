@@ -1,0 +1,68 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+.address-card,
+.delivery-details-card,
+.delivery-form,
+.Cart-Items,
+.order-container,
+#order-details-card {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cake-card {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.shipping-address,
+.order-items {
+  margin-bottom: 20px;
+}
+.cake-img {
+  width: 120px;
+}
+.main-page {
+    min-height: 80vh;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .sticky-filter {
+    position: sticky;
+    top: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .empty-message {
+    text-align: center;
+    font-size: 18px;
+    display: none;
+  }
+  .empty-cart-image {
+    width: 30rem;
+    mix-blend-mode: multiply;
+  }
+  .promobox {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #promoCodeSection {
+    width: 20vw;
+  }
+  .form-text {
+    color: black;
+  }

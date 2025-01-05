@@ -1,0 +1,34 @@
+.address-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.address-card {
+  max-width: 250px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.radio-selector {
+  scale: 1.2;
+  cursor: pointer;
+}
+#reviewOrderButton {
+  background: linear-gradient(135deg, black, grey);
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 50px;
+  transition: all ease 0.3s;
+  display: none; /* Initially hidden */
+}
+#reviewOrderButton:hover {
+  background: linear-gradient(135deg, grey, black);
+  scale: 0.98;
+}
