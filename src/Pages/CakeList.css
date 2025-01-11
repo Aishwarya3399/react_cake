@@ -131,6 +131,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 25rem;
 }
 
 .modal-product-details {
@@ -254,7 +255,6 @@ body {
 
 /* Modal Body Styling */
 #quickBuyModal .modal-body {
-  padding: 20px;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: row; /* Flex layout with row direction */

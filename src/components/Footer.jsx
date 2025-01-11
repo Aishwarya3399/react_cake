@@ -41,42 +41,42 @@ const Footer = () => {
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">COLLECTIONS</h6>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Same Day Cakes
                 </a>
               </p>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Classic Cakes
                 </a>
               </p>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Custom Cakes
                 </a>
               </p>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Cup Cakes
                 </a>
               </p>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Desserts
                 </a>
               </p>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Flowers
                 </a>
               </p>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Anniversary Cakes
                 </a>
               </p>
               <p>
-                <a href="/CakeList" className="text-reset">
+                <a href="/cakelist" className="text-reset">
                   Birthday Cakes
                 </a>
               </p>
@@ -126,7 +126,7 @@ const Footer = () => {
 
       <section className="text-center pb-3 pt-3">
         © 2024 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">TheCakeHeaven.com</a>
+        <a className="text-reset fw-bold" href="/">TheCakeHeaven.com</a>
       </section>
     </footer>
   );

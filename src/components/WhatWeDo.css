@@ -2,16 +2,18 @@
 .magic-spacing .row {
   display: flex;
   justify-content: space-between;
-  gap: 30px; 
+  gap: 30px;
   padding: 0 30px;
   margin: 0;
 }
 
+/* Style for each card inside the row */
 .magic-spacing .row > div {
   flex: 1;
-  max-width: calc(25% - 15px); 
+  max-width: calc(25% - 15px);
 }
 
+/* Styling for the cards themselves */
 .what-we-do .card {
   width: 100%;
   padding: 10px;
@@ -31,21 +33,62 @@
 .card-title {
   margin: 5px 0;
   font-size: 1rem;
-  text-align: center; 
-  color: #ffabc7; 
+  text-align: center;
+  color: #ffabc7;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .what-we-do .row .col-md-3:last-child {
-  margin-bottom: 0 !important;  
+  margin-bottom: 0 !important;
 }
 
 .item {
   min-width: calc(100%);
   text-align: center;
-  height: 20rem !important; 
+  height: 20rem !important;
   transition: all ease 0.3s;
+}
+
+/* Media Queries */
+@media (max-width: 2560px) {
+  .magic-spacing .row > div {
+    max-width: calc(25% - 20px);
+  }
+}
+
+@media (max-width: 1440px) {
+  .magic-spacing .row > div {
+    max-width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .magic-spacing .row > div {
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .magic-spacing .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .magic-spacing .row > div {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .what-we-do h1 {
+    font-size: 1.5rem;
+  }
+  .magic-spacing .row > div {
+    max-width: 100%;
+  }
+  .item{
+    height: 5rem!important;
+  }
 }
