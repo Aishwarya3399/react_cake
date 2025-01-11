@@ -5,11 +5,11 @@ const ByFlavor = () => {
   const [visibleItems, setVisibleItems] = useState(4);
 
   const items = [
-    { src: './images/CA.webp', title: 'Chocolate', path: '/CakeList' },
-    { src: './images/VC.webp', title: 'Vanilla', path: '/CakeList' },
-    { src: './images/CH.jpg', title: 'Red Velvet', path: '/CakeList' },
-    { src: './images/CC2.jpg', title: 'Strawberry', path: '/CakeList' },
-    { src: './images/FC.webp', title: 'Fruits', path: '/CakeList' },
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE9HywyOV36fbC8AU_R-lwFWM964pfmytDXA&s', title: 'Chocolate', path: '/CakeList' },
+    { src: 'https://img.freepik.com/free-photo/strawberry-fruit-cake-fresh-strawberry-wooden-table_176474-2523.jpg?t=st=1736489703~exp=1736493303~hmac=fceee4c1250df91f70d2a9491facc7e192330a05b8009aab346863855105b3e7&w=740', title: 'Vanilla', path: '/CakeList' },
+    { src: 'https://mrbrownbakery.com/image/images/GJ7uCwGiteTF24HTWBclkziVTdhpQeZWH23MvQfq.jpeg?p=full', title: 'Red Velvet', path: '/CakeList' },
+    { src: 'https://img.freepik.com/free-photo/yummy-cake-table_140725-884.jpg?t=st=1736487571~exp=1736491171~hmac=65ba43d66cb0e5e17df74fe627b8f4c44d4f5086b0085242cc3b164bacddeb20', title: 'Strawberry', path: '/CakeList' },
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE9HywyOV36fbC8AU_R-lwFWM964pfmytDXA&s', title: 'Fruits', path: '/CakeList' },
   ];
 
   const updateVisibleItems = () => {

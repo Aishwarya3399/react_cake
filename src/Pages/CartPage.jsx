@@ -5,10 +5,13 @@ import "./CartPage.css";
 const CartPage = () => {
   const [cart, setCart] = useState([]);
   const [recommendations] = useState([
-    { name: "Birthday Firecracker", price: 50, image: "/images/HCC.jpg" },
-    { name: "Candles", price: 20, image: "/images/CC1.jpg" },
-    { name: "Chocolate Cake", price: 50, image: "/images/choclate.webp" },
+    { name: "Birthday Firecracker", price: 50, image: "https://img.freepik.com/free-photo/strawberry-fruit-cake-fresh-strawberry-wooden-table_176474-2523.jpg?t=st=1736489703~exp=1736493303~hmac=fceee4c1250df91f70d2a9491facc7e192330a05b8009aab346863855105b3e7&w=740" },
+    { name: "Candles", price: 20, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE9HywyOV36fbC8AU_R-lwFWM964pfmytDXA&s" },
+    { name: "Chocolate Cake", price: 50, image: "https://mrbrownbakery.com/image/images/GJ7uCwGiteTF24HTWBclkziVTdhpQeZWH23MvQfq.jpeg?p=full" },
   ]);
+  const [orderFor, setOrderFor] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+
   const shippingCharge = 40;
 
   useEffect(() => {
@@ -50,10 +53,23 @@ const CartPage = () => {
     };
   };
 
+  const handleOrderDetailsChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "orderFor") {
+      setOrderFor(value);
+    } else if (name === "birthDate") {
+      setBirthDate(value);
+    }
+  };
+
+  const saveOrderDetails = () => {
+    console.log("Order Details Saved", { orderFor, birthDate });
+  };
+
   const { itemsPrice, totalPrice } = calculateOrderSummary();
 
   return (
-    <div className="pb-5 pt-2 col-lg-12 px-3 container ">
+    <div className="pb-5 pt-2 col-lg-12 px-3 container">
       <div className="row">
         {/* Side Card */}
         <div className="col-lg-2 mt-5 side-card text-center align-self-top">
@@ -85,8 +101,18 @@ const CartPage = () => {
           ) : (
             <>
               {cart.map((item, index) => (
-                <div key={index} className="cake-card d-flex justify-content-between align-items-center mb-3">
-                  <img src={item.image} alt={item.name} className="cake-img" />
+                <div
+                  key={index}
+                  className="cake-card d-flex justify-content-between align-items-center mb-3"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="cake-img"
+                    onError={(e) => {
+                      e.target.src = "/images/fallback.jpg"; // Replace with your fallback image path
+                    }}
+                  />
                   <div>
                     <h5>{item.name}</h5>
                     <p>₹{item.price}</p>
@@ -112,7 +138,10 @@ const CartPage = () => {
                       +
                     </button>
                   </div>
-                  <button className="btn btn-danger" onClick={() => removeFromCart(index)}>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => removeFromCart(index)}
+                  >
                     Remove
                   </button>
                 </div>
@@ -123,16 +152,34 @@ const CartPage = () => {
           {/* Recommended Items */}
           <div id="recommendations" className="mt-5">
             <h4 className="text-center">Recommended Items</h4>
-            <div className="row">
+            <div
+              className="row d-flex justify-content-center"
+              style={{ gap: "15px" }}
+            >
               {recommendations.map((item, index) => (
-                <div key={index} className="col-md-3 text-center rec-card mb-3">
-                  <img src={item.image} alt={item.name} className="cake-img img-fluid" />
-                  <div className="pt-2">
-                    <h5>{item.name}</h5>
-                    <p>₹{item.price}</p>
+                <div
+                  key={index}
+                  className="col-md-3 text-center rec-card mb-3 d-flex flex-column align-items-center"
+                  style={{ maxWidth: "200px" }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="cake-img img-fluid"
+                    style={{ height: "150px", objectFit: "cover" }}
+                    onError={(e) => {
+                      e.target.src = "/images/fallback.jpg"; // Replace with your fallback image path
+                    }}
+                  />
+                  <div className="pt-2" style={{ textAlign: "center" }}>
+                    <h5 style={{ fontSize: "16px", margin: "5px 0" }}>
+                      {item.name}
+                    </h5>
+                    <p style={{ margin: "5px 0" }}>₹{item.price}</p>
                   </div>
                   <button
                     className="btn btn-primary mb-2"
+                    style={{ marginTop: "auto", width: "100%" }}
                     onClick={() => addRecommendationToCart(index)}
                   >
                     Add to Cart
@@ -143,14 +190,35 @@ const CartPage = () => {
           </div>
         </div>
 
-        {/* Order Summary */}
+        {/* Order Details and Summary */}
         <div className="col-lg-2 border">
           <div className="order-summary p-3">
+            <h4>Order For</h4>
+            <input
+              type="text"
+              name="orderFor"
+              value={orderFor}
+              onChange={handleOrderDetailsChange}
+              placeholder="Enter recipient's name"
+            />
+            <input
+              type="date"
+              name="birthDate"
+              value={birthDate}
+              onChange={handleOrderDetailsChange}
+            />
+            <button className="btn btn-primary" onClick={saveOrderDetails}>
+              Save Details
+            </button>
+
             <h4>Order Summary</h4>
             <p>Items Price: ₹{itemsPrice}</p>
             <p>Shipping Charge: ₹{shippingCharge}</p>
             <h5>Total Price: ₹{totalPrice}</h5>
-            <button className="btn btn-primary" onClick={() => window.location.href = "/review"}>
+            <button
+              className="btn btn-primary"
+              onClick={() => (window.location.href = "/review")}
+            >
               Proceed to Review
             </button>
           </div>

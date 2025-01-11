@@ -1,29 +1,51 @@
-.what-we-do .row > div {
-  padding: 5px; /* Reduce spacing between columns */
+/* Style for the row with cards */
+.magic-spacing .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; 
+  padding: 0 30px;
+  margin: 0;
 }
 
-.card-title {
-  margin: 5px 0; /* Reduce top and bottom margin */
-  font-size: 1rem; /* Slightly smaller font size */
-  text-align: center;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Ellipsis for long titles */
+.magic-spacing .row > div {
+  flex: 1;
+  max-width: calc(25% - 15px); 
 }
 
 .what-we-do .card {
-  padding: 10px; /* Adjust padding inside cards */
+  width: 100%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensure even spacing */
-  border-radius: 8px; /* Optional: Rounded corners for better visuals */
+  justify-content: space-between;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .what-we-do .card img {
-  height: 120px; /* Adjust image height */
-  object-fit: cover; /* Ensure image fits nicely */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-.what-we-do .row {
-  margin: 0 -5px; /* Reduce the row's negative margins */
+.card-title {
+  margin: 5px 0;
+  font-size: 1rem;
+  text-align: center; 
+  color: #ffabc7; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none; 
+}
+
+.what-we-do .row .col-md-3:last-child {
+  margin-bottom: 0 !important;  
+}
+
+.item {
+  min-width: calc(100%);
+  text-align: center;
+  height: 20rem !important; 
+  transition: all ease 0.3s;
 }

@@ -92,23 +92,22 @@ const Address = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        {/* Side Card */}
-        <div className="col-lg-2 mt-5 side-card text-center align-self-top">
-          <div className="sticky-filter mt-4">
-            <Link className="nav-link active mt-4 mx-2 mb-3" to="/cart">
-              My Cart
-            </Link>
-            <Link className="nav-link mt-3 mx-2 mb-3" to="/address">
-              Delivery Address
-            </Link>
-            <Link className="nav-link mt-3 mx-2 mb-3" to="/review">
-              Review Order
-            </Link>
+   <div className="pb-5 pt-2 col-lg-12 px-3 container">
+        <div className="row">
+          {/* Side Card */}
+          <div className="col-lg-6 mt-5 side-card text-center align-self-top">
+            <div className="sticky-filter mt-5">
+              <Link className="nav-link active mt-4 mx-2 mb-3" to="/cart">
+                My Cart
+              </Link>
+              <Link className="nav-link mt-3 mx-2 mb-3" to="/address">
+                Delivery Address
+              </Link>
+              <Link className="nav-link mt-3 mx-2 mb-3" to="/review">
+                Review Order
+              </Link>
+            </div>
           </div>
-        </div>
-
         {/* Address Management Section */}
         <div className="col-lg-10 mt-5">
           <h2>Delivery Address</h2>

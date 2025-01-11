@@ -48,3 +48,133 @@ body {
     height: 120px;
     border-radius: 10px 0px 0px 10px;
   }
+
+  /* Media Queries for Responsiveness */
+
+
+/* General Fix for Side Card Display */
+.side-card {
+  display: block; /* Ensure the side card is visible */
+  position: relative; /* Ensure proper placement */
+}
+
+/* For screens up to 480px */
+@media (max-width: 480px) {
+  .wishlist-card {
+    display: flex;
+    flex-direction: column; /* Stack items for compact layout */
+    align-items: center; /* Center-align the content */
+    width: 95%; /* Slightly smaller width */
+    margin: 10px auto; /* Center the card on the page */
+    padding: 10px; /* Compact padding */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+
+  .cake-img {
+    width: 100px; /* Adjusted image size */
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px; /* Space between image and text */
+  }
+
+  .wishlist-card .p-1 {
+    text-align: center; /* Center-align the text */
+    font-size: 14px; /* Slightly smaller text */
+    margin-bottom: 10px; /* Space below the text block */
+  }
+
+  .wishlist-card .p-1 p {
+    margin: 4px 0; /* Compact spacing between text lines */
+  }
+
+  .wishlist-card .px-4 {
+    display: flex;
+    flex-direction: row; /* Buttons in one row */
+    justify-content: space-between; /* Distribute buttons evenly */
+    width: 100%; /* Stretch buttons to fill card width */
+    gap: 10px; /* Space between buttons */
+  }
+
+  .wishlist-card button {
+    font-size: 12px; /* Adjusted button text size */
+    padding: 8px 12px; /* Compact padding for buttons */
+    flex: 1; /* Buttons take equal space */
+    border-radius: 5px;
+  }
+  h1{
+    margin-top: 5rem;
+  }
+}
+
+
+/* For screens up to 768px */
+@media (max-width: 768px) {
+  .side-card {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-card a {
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .wishlist-card {
+    width: 85%;
+    margin: 10px auto;
+  }
+
+  .cake-img {
+    width: 100px;
+    height: 100px;
+  }
+  .sticky-filter {
+    font-size: 18px;
+    padding: 10px;
+    margin: 0 auto; 
+  }
+  .empty-cart-image {
+    width: 70%;
+  }
+  h1{
+    margin-top: 5rem;
+  }
+  }
+
+/* For screens up to 1024px */
+@media (max-width: 1024px) {
+  .sticky-filter {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .side-card a {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .wishlist-card {
+    width: 70vw;
+  }
+
+  .cake-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .empty-cart-image {
+    width: 30rem;
+  }
+}
+
+
+
+
+

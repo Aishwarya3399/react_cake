@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
-import cakes from "../data/Cakes"; // Import cake data
-import "./CakeList.css"; // Import styles
+import cakes from "../data/Cakes"; 
+import "./CakeList.css";
 
 const CakeList = () => {
   const [filters, setFilters] = useState({
@@ -19,11 +19,15 @@ const CakeList = () => {
     JSON.parse(localStorage.getItem("cart")) || []
   );
   const [selectedCake, setSelectedCake] = useState(null);
+  const [selectedAttributes, setSelectedAttributes] = useState({
+    weight: "0.5",
+    flavor: "chocolate",
+    egg: "eggless",
+  });
   const navigate = useNavigate();
 
-  // Update localStorage when wishlist or cart changes
   useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlist)); // Store entire wishlist
+    localStorage.setItem("wishlist", JSON.stringify(wishlist)); 
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [wishlist, cart]);
 
@@ -54,70 +58,65 @@ const CakeList = () => {
   const toggleWishlist = (cake) => {
     const updatedWishlist = wishlist.some((item) => item.id === cake.id)
       ? wishlist.filter((item) => item.id !== cake.id)
-      : [...wishlist, cake]; // Add the full cake object
+      : [...wishlist, cake]; 
     setWishlist(updatedWishlist);
   };
-  
+
   const openQuickBuyModal = (cake) => {
     setSelectedCake(cake);
-    const modal = new window.bootstrap.Modal(
-      document.getElementById("quickBuyModal")
-    );
-    modal.show();
+    setSelectedAttributes({ weight: "0.5", flavor: "chocolate", egg: "eggless" });
   };
 
-  const addToCart = (cake) => {
-    // Retrieve the current cart from localStorage or state
+  const addToCartAndRedirect = () => {
+    if (!selectedCake) return;
+
+    const { weight, flavor, egg } = selectedAttributes;
+
+    const cakeToAdd = {
+      ...selectedCake,
+      weight,
+      flavor,
+      egg,
+      totalPrice: selectedCake.price * parseFloat(weight),
+    };
+
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
-  
-    // Create a unique identifier based on cake ID, flavor, and weight
-    const uniqueIdentifier = `${cake.id}-${cake.flavor || 'default'}-${cake.weight}`;
-  
-    // Check if the cake variant (based on flavor and weight) is already in the cart
-    const existingCake = currentCart.find(item => item.uniqueIdentifier === uniqueIdentifier);
-  
+
+    const uniqueIdentifier = `${cakeToAdd.id}-${flavor}-${weight}`;
+
+    const existingCake = currentCart.find(
+      (item) => item.uniqueIdentifier === uniqueIdentifier
+    );
+
     if (existingCake) {
-      // If the cake variant is already in the cart, increment the quantity
       existingCake.quantity += 1;
-      existingCake.totalPrice = existingCake.price * existingCake.quantity; // Update the total price
+      existingCake.totalPrice = existingCake.price * existingCake.quantity;
     } else {
-      // Otherwise, add the cake variant with quantity 1 and calculate total price
       const newCake = {
-        ...cake,
+        ...cakeToAdd,
         uniqueIdentifier,
         quantity: 1,
-        totalPrice: cake.price, // Set initial total price as the price of the cake
       };
       currentCart.push(newCake);
     }
-  
-    // Save the updated cart to localStorage
-    localStorage.setItem("cart", JSON.stringify(currentCart));
-  
-    // Update the cart state if you're using React state
-    setCart(currentCart);
-  };
-  
 
-  const updatePrice = () => {
-    if (!selectedCake) return;
-    const weight = document.getElementById("modalProductWeight").value;
-    const flavor = document.getElementById("modalProductFlavor").value;
-    const egg = document.getElementById("modalProductEgg").value;
-    const price =
-      selectedCake.price * weight; // Adjust based on weight
-    document.getElementById("modalProductPrice").innerText = `Rs. ${price}`;
+    localStorage.setItem("cart", JSON.stringify(currentCart));
+    setCart(currentCart);
+    navigate("/cart");
+  };
+
+  const handleAttributeChange = (e) => {
+    const { name, value } = e.target;
+    setSelectedAttributes((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
     <div className="cake-list container-fluid">
       <div className="row">
-        {/* Left Filters Section */}
         <div className="col-md-3">
           <div className="filters p-3">
             <h5>Filter Cakes</h5>
             <div className="d-flex flex-column">
-              {/* Weight Filter */}
               <div className="form-group mb-3">
                 <label htmlFor="weightFilter">Weight</label>
                 <select
@@ -136,7 +135,6 @@ const CakeList = () => {
                 </select>
               </div>
 
-              {/* Availability Filter */}
               <div className="form-group mb-3">
                 <label htmlFor="availabilityFilter">Availability</label>
                 <select
@@ -153,11 +151,9 @@ const CakeList = () => {
                 </select>
               </div>
 
-              {/* Price Range Filter */}
               <div className="form-group mb-3">
                 <label htmlFor="priceRange">
-                  Price Range: Rs. {filters.priceRange[0]} - Rs.{" "}
-                  {filters.priceRange[1]}
+                  Price Range: Rs. {filters.priceRange[0]} - Rs. {filters.priceRange[1]}
                 </label>
                 <input
                   type="range"
@@ -175,7 +171,6 @@ const CakeList = () => {
                 />
               </div>
 
-              {/* Egg or Eggless Filter */}
               <div className="form-group mb-3">
                 <label htmlFor="eggFilter">Egg or Eggless</label>
                 <select
@@ -192,7 +187,6 @@ const CakeList = () => {
                 </select>
               </div>
 
-              {/* Cake Type Filter */}
               <div className="form-group mb-3">
                 <label htmlFor="cakeTypeFilter">Cake Type</label>
                 <select
@@ -242,8 +236,6 @@ const CakeList = () => {
           </div>
         </div>
 
-    
-        {/* Right Cake Cards Section */}
         <div className="col-md-9">
           <div className="row" id="productList">
             {applyFilters().map((cake) => (
@@ -298,7 +290,6 @@ const CakeList = () => {
         </div>
       </div>
 
-      {/* Quick Buy Modal */}
       {selectedCake && (
         <Modal
           show={selectedCake !== null}
@@ -306,67 +297,70 @@ const CakeList = () => {
           id="quickBuyModal"
         >
           <Modal.Header closeButton>
-            <Modal.Title>Product Description</Modal.Title>
+            <Modal.Title>Quick Buy</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="modal-product-details">
-              {/* Image Section */}
               <img
                 src={selectedCake.image}
                 alt={selectedCake.name}
-                className="img-fluid"
+                className="img-fluid mb-3"
               />
-
-              {/* Description Section */}
               <div>
                 <h5>{selectedCake.name}</h5>
                 <div>
                   <label>Weight</label>
                   <select
-                    id="modalProductWeight"
-                    onChange={updatePrice}
+                    name="weight"
+                    value={selectedAttributes.weight}
+                    onChange={handleAttributeChange}
                     className="form-control"
                   >
+                    <option value="0.5">0.5 kg</option>
                     <option value="1">1 kg</option>
                     <option value="2">2 kg</option>
+                    <option value="3">3 kg</option>
+                    <option value="4">4 kg</option>
                     <option value="5">5 kg</option>
                   </select>
                 </div>
                 <div>
                   <label>Flavor</label>
                   <select
-                    id="modalProductFlavor"
+                    name="flavor"
+                    value={selectedAttributes.flavor}
+                    onChange={handleAttributeChange}
                     className="form-control"
-                    onChange={updatePrice}
                   >
                     <option value="chocolate">Chocolate</option>
                     <option value="vanilla">Vanilla</option>
+                    <option value="strawberry">Strawberry</option>
                   </select>
                 </div>
                 <div>
                   <label>Egg or Eggless</label>
                   <select
-                    id="modalProductEgg"
+                    name="egg"
+                    value={selectedAttributes.egg}
+                    onChange={handleAttributeChange}
                     className="form-control"
-                    onChange={updatePrice}
                   >
                     <option value="eggless">Eggless</option>
                     <option value="egg">Egg</option>
                   </select>
                 </div>
-                <p id="modalProductPrice">Rs. {selectedCake.price}</p>
+                <p>
+                  Total Price: Rs. {selectedCake.price * parseFloat(selectedAttributes.weight)}
+                </p>
               </div>
             </div>
           </Modal.Body>
           <Modal.Footer>
             <Button
               variant="primary"
-              onClick={() => {
-                addToCart(selectedCake);
-                setSelectedCake(null);
-              }}
+              onClick={addToCartAndRedirect}
             >
-              Buy Now
+              Quick Buy
             </Button>
           </Modal.Footer>
         </Modal>
@@ -374,7 +368,5 @@ const CakeList = () => {
     </div>
   );
 };
-
-
 
 export default CakeList;

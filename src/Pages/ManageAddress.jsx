@@ -109,13 +109,13 @@ const ManageAddress = () => {
                 <h5>Saved Addresses</h5>
                 <div id="savedAddresses" className="row justify-content-center">
                   {savedAddresses.map((address, index) => (
-                    <div key={index} className="address-card col-lg-3 mx-2">
+                    <div key={index} className="address-card col-lg-12 mx-2">
                       <p>{address.fullName}</p>
                       <p>{address.mobileNumber}</p>
                       <p>{address.address}</p>
                       <p>{address.city}, {address.state}, {address.zip}</p>
                       <p>{address.country}</p>
-                      <button className="btn btn-secondary btn-sm" onClick={() => editAddress(index)}>Edit</button>
+                      <button className="btn btn-secondary btn-sm mx-2" onClick={() => editAddress(index)}>Edit</button>
                       <button className="btn btn-danger btn-sm" onClick={() => deleteAddress(index)}>Delete</button>
                     </div>
                   ))}

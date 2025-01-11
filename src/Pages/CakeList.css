@@ -220,37 +220,36 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem; 
-  /* justify-content: space-between;  */
 }
 
 /* Adjust for responsiveness on smaller screens */
 @media (max-width: 768px) {
   #productList .col-md-3 {
-    flex: 0 0 calc(50% - 1rem); /* Two cards per row */
+    flex: 0 0 calc(50% - 1rem); 
   }
   .product-card {
-    width: 100%; /* Full width of the parent */
+    width: 100%; 
   }
 }
 /* Modal Styling */
 #quickBuyModal .modal-content {
-  background-color: #fff; /* White background for the modal */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  max-width: 800px; /* Increased width for the modal */
-  width: 80%; /* Make modal width 80% of the screen size */
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  max-width: 800px; 
+  width: 80%; 
 }
 
 /* Modal Header Styling */
 #quickBuyModal .modal-header {
-  background-color: #fff; /* White background */
-  color: black; /* Black text color */
-  border-bottom: none; /* Remove default border */
+  background-color: #fff; 
+  color: black; 
+  border-bottom: none; 
 }
 
 #quickBuyModal .modal-header .modal-title {
-  font-family: 'Poppins', sans-serif; /* Custom font */
-  font-size: 1.5rem; /* Title font size */
+  font-family: 'Poppins', sans-serif; 
+  font-size: 1.5rem; 
 }
 
 /* Modal Body Styling */
@@ -264,17 +263,17 @@ body {
 
 /* Image Section Styling */
 #quickBuyModal .modal-product-details img {
-  width: 50%; /* Image takes up 50% of the width */
-  max-height: 400px; /* Limit image height */
-  object-fit: contain; /* Ensure the image fits without distortion */
-  border-radius: 8px; /* Optional rounded corners for the image */
+  width: 50%; 
+  max-height: 400px;
+  object-fit: contain; 
+  border-radius: 8px; 
 }
 
 /* Description Section Styling */
 #quickBuyModal .modal-product-details div {
-  width: 50%; /* Description takes up 50% of the width */
+  width: 50%; 
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
+  flex-direction: column; 
   justify-content: space-between;
   padding-left: 20px;
 }
@@ -311,9 +310,9 @@ body {
 
 /* Price Styling */
 #quickBuyModal #modalProductPrice {
-  font-size: 1.3rem; /* Increased font size for the price */
+  font-size: 1.3rem; 
   font-weight: 700;
-  color: #333; /* Dark color for price */
+  color: #333; 
   margin-top: 20px;
 }
 
@@ -325,17 +324,30 @@ body {
 }
 
 #quickBuyModal .modal-footer .btn-primary {
-  background-color: #007bff; /* Blue background for the button */
+  background-color:#ff6347; 
   border: none;
-  padding: 12px 24px; /* Increased padding */
-  font-size: 1.2rem; /* Increased font size */
+  padding: 12px 24px; 
+  font-size: 1.2rem; 
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover */
+  transition: background-color 0.3s ease; 
 }
 
 #quickBuyModal .modal-footer .btn-primary:hover {
-  background-color: #0056b3; /* Darker blue when hovered */
+  background-color:blue; 
 }
+
+.cake-info {
+  padding: 5px; 
+  margin: 0;
+  line-height: 1.2; 
+}
+
+.cake-info h6,
+.cake-info p {
+  margin: 2px 0; 
+  font-size: 14px; 
+}
+
 
